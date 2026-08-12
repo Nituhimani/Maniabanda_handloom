@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maniabandha Handloom — Ritanjali &amp; Gopal Chandra Karan</title>
+<meta name="description" content="Maniabandha Handloom — authentic Odisha ikat sarees woven by Ritanjali &amp; Gopal Chandra Karan. Order by code on WhatsApp or call.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Mukta:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --indigo:#1b2a5e;
+    --indigo-deep:#12193f;
+    --red:#a31621;
+    --ivory:#f4ead8;
+    --gold:#d9a441;
+    --teal:#1f6f6f;
+    --ink:#201a14;
+    --card-bg:#ffffff;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--ivory);
+    color:var(--ink);
+    font-family:'Mukta',sans-serif;
+    font-weight:400;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{
+    font-family:'Yatra One',cursive;
+    font-weight:400;
+    letter-spacing:0.3px;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+
+  /* ---- ikat stripe border, the signature motif reused throughout ---- */
+  .ikat-border{
+    height:14px;
+    width:100%;
+    background:
+      repeating-linear-gradient(90deg,
+        var(--red) 0px, var(--red) 10px,
+        var(--ivory) 10px, var(--ivory) 14px,
+        var(--red) 14px, var(--red) 24px,
+        var(--ivory) 24px, var(--ivory) 28px);
+  }
+  .ikat-border.thin{height:6px;}
+
+  /* ---- header ---- */
+  header{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:var(--indigo);
+    color:var(--ivory);
+  }
+  .header-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    max-width:1100px;
+    margin:0 auto;
+    padding:12px 16px;
+  }
+  .brand{
+    display:flex;
+    flex-direction:column;
+    line-height:1.15;
+  }
+  .brand .name{
+    font-family:'Yatra One',cursive;
+    font-size:1.35rem;
+    color:var(--gold);
+  }
+  .brand .sub{
+    font-size:0.68rem;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    color:#cfd4e6;
+  }
+  .header-actions{display:flex;gap:6px;}
+  .icon-btn{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.18);
+    color:var(--ivory);
+    padding:8px 12px;
+    border-radius:24px;
+    font-size:0.82rem;
+    font-weight:600;
+    white-space:nowrap;
+  }
+  .icon-btn.wa{background:#25d366;border-color:#25d366;color:#05330f;}
+  .icon-btn.yt{background:#ff0000;border-color:#ff0000;color:#fff;}
+  @media(max-width:400px){
+    .icon-btn{padding:8px;border-radius:50%;}
+    .icon-btn .label{display:none;}
+  }
+  .icon-btn svg{width:16px;height:16px;flex:none;}
+
+  /* ---- hero ---- */
+  .hero{
+    position:relative;
+    background:var(--indigo-deep);
+    color:var(--ivory);
+    overflow:hidden;
+  }
+  .hero-img{
+    width:100%;
+    height:56vh;
+    min-height:340px;
+    max-height:520px;
+    object-fit:cover;
+    object-position:center 20%;
+    opacity:0.55;
+  }
+  .hero-content{
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    padding:24px 18px 28px;
+    background:linear-gradient(to top, rgba(18,25,63,0.96) 10%, rgba(18,25,63,0.35) 60%, rgba(18,25,63,0.05) 100%);
+  }
+  .hero-content .eyebrow{
+    font-size:0.72rem;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:8px;
+    font-weight:700;
+  }
+  .hero-content h1{
+    font-size:2.1rem;
+    margin:0 0 10px;
+    max-width:600px;
+    color:#fff;
+  }
+  .hero-content p{
+    max-width:520px;
+    font-size:0.95rem;
+    color:#e4e6f2;
+    margin:0 0 16px;
+  }
+  .hero-ctas{display:flex;gap:10px;flex-wrap:wrap;}
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:11px 18px;
+    border-radius:30px;
+    font-weight:700;
+    font-size:0.88rem;
+    border:none;
+    cursor:pointer;
+  }
+  .btn-primary{background:#25d366;color:#05330f;}
+  .btn-outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,0.55);}
+  .btn svg{width:16px;height:16px;}
+
+  /* ---- weavers strip ---- */
+  .weavers{
+    max-width:1100px;
+    margin:0 auto;
+    padding:20px 18px 6px;
+    display:flex;
+    gap:14px;
+    align-items:center;
+    color:var(--indigo-deep);
+  }
+  .weavers .names{font-weight:700;font-size:0.95rem;}
+  .weavers .role{font-size:0.78rem;color:#5a5240;}
+
+  /* ---- search & filter ---- */
+  .search-wrap{
+    max-width:1100px;
+    margin:18px auto 0;
+    padding:0 18px;
+  }
+  .search-box{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:#fff;
+    border:1.5px solid #e3d7bf;
+    border-radius:30px;
+    padding:12px 16px;
+    box-shadow:0 2px 10px rgba(27,42,94,0.06);
+  }
+  .search-box svg{width:18px;height:18px;color:var(--indigo);flex:none;}
+  .search-box input{
+    border:none;
+    outline:none;
+    font-family:'Mukta',sans-serif;
+    font-size:0.95rem;
+    width:100%;
+    background:transparent;
+    color:var(--ink);
+  }
+  .search-box input::placeholder{color:#9a8f74;}
+  .chip-row{
+    display:flex;
+    gap:8px;
+    overflow-x:auto;
+    padding:14px 2px 4px;
+    scrollbar-width:none;
+  }
+  .chip-row::-webkit-scrollbar{display:none;}
+  .chip{
+    flex:none;
+    padding:7px 14px;
+    background:#fff;
+    border:1px solid #e3d7bf;
+    border-radius:20px;
+    font-size:0.82rem;
+    font-weight:600;
+    color:var(--indigo);
+  }
+  .chip.active{background:var(--indigo);color:#fff;border-color:var(--indigo);}
+  .result-count{
+    font-size:0.8rem;
+    color:#6b6350;
+    padding:6px 4px 0;
+  }
+
+  /* ---- gallery ---- */
+  .gallery{
+    max-width:1100px;
+    margin:0 auto;
+    padding:16px 14px 40px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:14px;
+  }
+  @media(min-width:640px){
+    .gallery{grid-template-columns:repeat(3,1fr);}
+  }
+  @media(min-width:900px){
+    .gallery{grid-template-columns:repeat(4,1fr);}
+  }
+  .card{
+    background:var(--card-bg);
+    border-radius:var(--radius);
+    overflow:hidden;
+    box-shadow:0 3px 12px rgba(27,42,94,0.08);
+    display:flex;
+    flex-direction:column;
+  }
+  .card-media{
+    position:relative;
+    aspect-ratio:3/4;
+    background:var(--indigo-deep);
+    overflow:hidden;
+  }
+  .card-media img{
+    width:100%;height:100%;object-fit:cover;
+  }
+  .code-badge{
+    position:absolute;
+    top:8px;
+    left:8px;
+    background:var(--red);
+    color:#fff;
+    font-weight:800;
+    font-size:0.78rem;
+    padding:4px 10px;
+    border-radius:20px;
+    letter-spacing:0.4px;
+  }
+  .sold-badge{
+    position:absolute;
+    inset:0;
+    background:rgba(18,25,63,0.55);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    font-weight:700;
+    font-size:0.85rem;
+    letter-spacing:1px;
+    text-transform:uppercase;
+  }
+  .placeholder-media{
+    width:100%;height:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:14px;
+    color:var(--ivory);
+    background:
+      repeating-linear-gradient(45deg, #24316b 0 12px, #1b2a5e 12px 24px);
+  }
+  .placeholder-media .ph-code{
+    font-family:'Yatra One',cursive;
+    font-size:1.7rem;
+    color:var(--gold);
+  }
+  .placeholder-media .ph-note{
+    font-size:0.72rem;
+    color:#d8dcef;
+    margin-top:4px;
+    max-width:140px;
+  }
+  .card-body{
+    padding:10px 12px 12px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    flex:1;
+  }
+  .card-title{
+    font-size:0.86rem;
+    font-weight:700;
+    color:var(--indigo-deep);
+  }
+  .card-tag{
+    font-size:0.72rem;
+    color:#7a7156;
+    text-transform:uppercase;
+    letter-spacing:0.5px;
+  }
+  .card-actions{
+    margin-top:auto;
+    display:flex;
+    gap:6px;
+  }
+  .card-actions a{
+    flex:1;
+    text-align:center;
+    padding:8px 6px;
+    border-radius:20px;
+    font-size:0.76rem;
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:4px;
+  }
+  .card-actions a svg{width:13px;height:13px;}
+  .act-wa{background:#25d366;color:#05330f;}
+  .act-call{background:var(--indigo);color:#fff;}
+
+  .empty-state{
+    grid-column:1/-1;
+    text-align:center;
+    padding:40px 20px;
+    color:#7a7156;
+  }
+
+  /* ---- heritage section ---- */
+  .heritage{
+    background:var(--indigo);
+    color:var(--ivory);
+    padding:38px 18px;
+  }
+  .heritage-inner{
+    max-width:800px;
+    margin:0 auto;
+    text-align:center;
+  }
+  .heritage h2{
+    color:var(--gold);
+    font-size:1.6rem;
+    margin:0 0 14px;
+  }
+  .heritage p{
+    font-size:0.92rem;
+    color:#dfe1ef;
+    margin:0 0 10px;
+  }
+  .heritage-badges{
+    display:flex;
+    gap:10px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-top:18px;
+  }
+  .heritage-badges span{
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.2);
+    padding:8px 14px;
+    border-radius:20px;
+    font-size:0.78rem;
+  }
+
+  /* ---- footer ---- */
+  footer{
+    background:var(--indigo-deep);
+    color:#b9bfda;
+    padding:30px 18px 90px;
+    font-size:0.85rem;
+  }
+  .footer-inner{
+    max-width:1100px;
+    margin:0 auto;
+    display:flex;
+    flex-wrap:wrap;
+    gap:24px;
+    justify-content:space-between;
+  }
+  .footer-col h3{
+    color:var(--gold);
+    font-size:1rem;
+    margin:0 0 10px;
+  }
+  .footer-col p, .footer-col a{
+    display:block;
+    margin-bottom:6px;
+    color:#c7cbe4;
+  }
+  .footer-bottom{
+    max-width:1100px;
+    margin:24px auto 0;
+    padding-top:16px;
+    border-top:1px solid rgba(255,255,255,0.1);
+    font-size:0.75rem;
+    color:#7f86ab;
+  }
+
+  /* ---- sticky mobile action bar ---- */
+  .mobile-bar{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    z-index:60;
+    display:flex;
+    background:#fff;
+    border-top:1px solid #e3d7bf;
+    box-shadow:0 -3px 12px rgba(0,0,0,0.08);
+  }
+  .mobile-bar a{
+    flex:1;
+    text-align:center;
+    padding:13px 8px;
+    font-weight:700;
+    font-size:0.85rem;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+  }
+  .mobile-bar a.wa{background:#25d366;color:#05330f;}
+  .mobile-bar a.call{background:var(--indigo);color:#fff;}
+  .mobile-bar svg{width:16px;height:16px;}
+  @media(min-width:768px){
+    .mobile-bar{display:none;}
+    footer{padding-bottom:30px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <span class="name">Maniabandha Handloom</span>
+      <span class="sub">Ritanjali &amp; Gopal Chandra Karan</span>
+    </div>
+    <div class="header-actions">
+      <a class="icon-btn" href="tel:+917978400421" aria-label="Call">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call
+      </a>
+      <a class="icon-btn wa" href="https://wa.me/917377259130?text=Namaste%2C%20I%20am%20interested%20in%20your%20handloom%20sarees" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.05 4c-4.92 0-8.93 4.01-8.94 8.94 0 1.58.41 3.1 1.2 4.47L3 21l3.7-1.28a8.9 8.9 0 0 0 4.34 1.11h.01c4.93 0 8.93-4.02 8.94-8.94 0-2.39-.93-4.63-2.39-6.57zM12.05 19.4a7.4 7.4 0 0 1-3.78-1.03l-.27-.16-2.83.98.94-2.75-.18-.28a7.42 7.42 0 0 1-1.14-3.97c0-4.1 3.34-7.44 7.45-7.44 1.99 0 3.86.78 5.26 2.19a7.38 7.38 0 0 1 2.18 5.26c-.01 4.1-3.35 7.4-7.63 7.2z"/></svg>
+        WhatsApp
+      </a>
+      <a class="icon-btn yt" href="https://www.youtube.com/@ritanjalikaran78/featured" target="_blank" rel="noopener" aria-label="YouTube channel">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4L15.8 12z"/></svg>
+        YouTube
+      </a>
+    </div>
+  </div>
+  <div class="ikat-border thin"></div>
+</header>
+
+<section class="hero">
+  <img class="hero-img" src="couple.jpg" alt="Ritanjali and Gopal Chandra Karan at their handloom">
+  <div class="hero-content">
+    <div class="eyebrow">Odisha Heritage · Ancestral Craft</div>
+    <h1>Maniabandha Ikat, woven by hand since generations</h1>
+    <p>A husband–wife weaving legacy carrying forward the sacred geometry of Jagannath and Buddhist temple art, thread by thread, on the handloom.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="https://wa.me/917377259130?text=Namaste%2C%20I%20am%20interested%20in%20your%20sarees" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.05 4c-4.92 0-8.93 4.01-8.94 8.94 0 1.58.41 3.1 1.2 4.47L3 21l3.7-1.28a8.9 8.9 0 0 0 4.34 1.11h.01c4.93 0 8.93-4.02 8.94-8.94 0-2.39-.93-4.63-2.39-6.57zM12.05 19.4a7.4 7.4 0 0 1-3.78-1.03l-.27-.16-2.83.98.94-2.75-.18-.28a7.42 7.42 0 0 1-1.14-3.97c0-4.1 3.34-7.44 7.45-7.44 1.99 0 3.86.78 5.26 2.19a7.38 7.38 0 0 1 2.18 5.26c-.01 4.1-3.35 7.4-7.63 7.2z"/></svg>
+        Message on WhatsApp
+      </a>
+      <a class="btn btn-outline" href="#gallery">Browse sarees ↓</a>
+    </div>
+  </div>
+</section>
+
+<div class="weavers">
+  <div>
+    <div class="names">Ritanjali Karan &amp; Gopal Chandra Karan</div>
+    <div class="role">Third-generation Maniabandha weavers · Odisha</div>
+  </div>
+</div>
+
+<div class="search-wrap" id="gallery">
+  <div class="search-box">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+    <input id="searchInput" type="text" placeholder="Search by code or colour — try “315” or “red”">
+  </div>
+  <div class="chip-row" id="chipRow">
+    <div class="chip active" data-filter="all">All</div>
+    <div class="chip" data-filter="300">Code 300</div>
+    <div class="chip" data-filter="303">Code 303</div>
+    <div class="chip" data-filter="310">Code 310</div>
+    <div class="chip" data-filter="315">Code 315</div>
+    <div class="chip" data-filter="320">Code 320</div>
+  </div>
+  <div class="result-count" id="resultCount"></div>
+</div>
+
+<div class="gallery" id="gallery-grid">
+  <!-- 315 - real photos -->
+  <div class="card" data-code="315" data-colour="blue indigo navy">
+    <div class="card-media">
+      <span class="code-badge">#315</span>
+      <img src="315_front.jpg" alt="Saree code 315, front view, indigo blue ikat with elephant and temple motifs">
+    </div>
+    <div class="card-body">
+      <div class="card-title">Saree #315</div>
+      <div class="card-tag">Indigo · elephant &amp; temple motif</div>
+      <div class="card-actions">
+        <a class="act-wa" href="https://wa.me/917377259130?text=Namaste%2C%20I%20am%20interested%20in%20Saree%20Code%20315" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="act-call" href="tel:+917978400421">Call</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-code="315" data-colour="blue indigo navy back pallu">
+    <div class="card-media">
+      <span class="code-badge">#315 · Pallu</span>
+      <img src="315_back.jpg" alt="Saree code 315, back/pallu view with red border and animal motifs">
+    </div>
+    <div class="card-body">
+      <div class="card-title">Saree #315 — Pallu</div>
+      <div class="card-tag">Red ikat border detail</div>
+      <div class="card-actions">
+        <a class="act-wa" href="https://wa.me/917377259130?text=Namaste%2C%20I%20am%20interested%20in%20Saree%20Code%20315" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="act-call" href="tel:+917978400421">Call</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- placeholder codes: no real photo yet, kept honest rather than using stock images -->
+  <div class="card" data-code="300" data-colour="">
+    <div class="card-media">
+      <div class="placeholder-media">
+        <div class="ph-code">#300</div>
+        <div class="ph-note">Photo on request — ask on WhatsApp</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Saree #300</div>
+      <div class="card-tag">Ask for photos &amp; price</div>
+      <div class="card-actions">
+        <a class="act-wa" href="https://wa.me/917377259130?text=Namaste%2C%20I%20am%20interested%20in%20Saree%20Code%20300" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="act-call" href="tel:+917978400421">Call</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-code="303" data-colour="">
+    <div class="card-media">
+      <div class="placeholder-media">
+        <div class="ph-code">#303</div>
+        <div class="ph-note">Photo on request — ask on WhatsApp</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Saree #303</div>
+      <div class="card-tag">Ask for photos &amp; price</div>
+      <div class="card-actions">
+        <a class="act-wa" href="https://wa.me/917377259130?text=Namaste%2C%20I%20am%20interested%20in%20Saree%20Code%20303" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="act-call" href="tel:+917978400421">Call</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-code="310" data-colour="">
+    <div class="card-media">
+      <div class="placeholder-media">
+        <div class="ph-code">#310</div>
+        <div class="ph-note">Photo on request — ask on WhatsApp</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Saree #310</div>
+      <div class="card-tag">Ask for photos &amp; price</div>
+      <div class="card-actions">
+        <a class="act-wa" href="https://wa.me/917377259130?text=Namaste%2C%20I%20am%20interested%20in%20Saree%20Code%20310" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="act-call" href="tel:+917978400421">Call</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-code="320" data-colour="">
+    <div class="card-media">
+      <div class="placeholder-media">
+        <div class="ph-code">#320</div>
+        <div class="ph-note">Photo on request — ask on WhatsApp</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Saree #320</div>
+      <div class="card-tag">Ask for photos &amp; price</div>
+      <div class="card-actions">
+        <a class="act-wa" href="https://wa.me/917377259130?text=Namaste%2C%20I%20am%20interested%20in%20Saree%20Code%20320" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="act-call" href="tel:+917978400421">Call</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ikat-border"></div>
+
+<section class="heritage">
+  <div class="heritage-inner">
+    <h2>Craft carried on the loom, not in a factory</h2>
+    <p>Maniabandha is an ancestral, handwoven ikat tradition of Odisha. Every thread is tie-dyed and set on the handloom by hand, long before it becomes a saree — the same way it has been done in this family for generations.</p>
+    <p>The motifs draw from Jagannath temple iconography and Buddhist craft traditions native to the region — elephants, conch, lotus and temple forms bound into the weave itself, not printed on top of it.</p>
+    <div class="heritage-badges">
+      <span>100% Handloom</span>
+      <span>Quality-checked before dispatch</span>
+      <span>Delivery across India</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h3>Order a saree</h3>
+      <p>Call or WhatsApp us with the saree code, or send a screenshot of the saree you liked.</p>
+      <a href="tel:+917978400421">📞 +91 79784 00421 (Call)</a>
+      <a href="https://wa.me/917377259130" target="_blank" rel="noopener">💬 +91 73772 59130 (WhatsApp)</a>
+    </div>
+    <div class="footer-col">
+      <h3>See more sarees</h3>
+      <p>New pieces are posted regularly on our channel.</p>
+      <a href="https://www.youtube.com/@ritanjalikaran78/featured" target="_blank" rel="noopener">▶ YouTube — @ritanjalikaran78</a>
+    </div>
+    <div class="footer-col">
+      <h3>Delivery</h3>
+      <p>We ship across India. Every saree is checked for quality before it leaves us.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    Ritanjali &amp; Gopal Chandra Karan · Maniabandha Handloom, Odisha
+  </div>
+</footer>
+
+<div class="mobile-bar">
+  <a class="call" href="tel:+917978400421">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Call to order
+  </a>
+  <a class="wa" href="https://wa.me/917377259130?text=Namaste%2C%20I%20am%20interested%20in%20your%20sarees" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.05 4c-4.92 0-8.93 4.01-8.94 8.94 0 1.58.41 3.1 1.2 4.47L3 21l3.7-1.28a8.9 8.9 0 0 0 4.34 1.11h.01c4.93 0 8.93-4.02 8.94-8.94 0-2.39-.93-4.63-2.39-6.57zM12.05 19.4a7.4 7.4 0 0 1-3.78-1.03l-.27-.16-2.83.98.94-2.75-.18-.28a7.42 7.42 0 0 1-1.14-3.97c0-4.1 3.34-7.44 7.45-7.44 1.99 0 3.86.78 5.26 2.19a7.38 7.38 0 0 1 2.18 5.26c-.01 4.1-3.35 7.4-7.63 7.2z"/></svg>
+    WhatsApp
+  </a>
+</div>
+
+<script>
+  const cards = Array.from(document.querySelectorAll('#gallery-grid .card'));
+  const searchInput = document.getElementById('searchInput');
+  const chips = Array.from(document.querySelectorAll('.chip'));
+  const resultCount = document.getElementById('resultCount');
+  let activeChip = 'all';
+
+  function applyFilter(){
+    const q = searchInput.value.trim().toLowerCase();
+    let visible = 0;
+    cards.forEach(card => {
+      const code = card.dataset.code || '';
+      const colour = (card.dataset.colour || '').toLowerCase();
+      const title = card.querySelector('.card-title').textContent.toLowerCase();
+      const matchesChip = activeChip === 'all' || code === activeChip;
+      const matchesSearch = !q || code.includes(q) || colour.includes(q) || title.includes(q);
+      const show = matchesChip && matchesSearch;
+      card.style.display = show ? '' : 'none';
+      if(show) visible++;
+    });
+    resultCount.textContent = visible ? `${visible} saree${visible>1?'s':''} shown` : '';
+    document.getElementById('emptyState')?.remove();
+    if(visible === 0){
+      const div = document.createElement('div');
+      div.className = 'empty-state';
+      div.id = 'emptyState';
+      div.textContent = 'No matching saree found here — message us on WhatsApp, we likely have it in stock.';
+      document.getElementById('gallery-grid').appendChild(div);
+    }
+  }
+
+  searchInput.addEventListener('input', applyFilter);
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      chips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      activeChip = chip.dataset.filter;
+      applyFilter();
+    });
+  });
+</script>
+
+</body>
+</html>
